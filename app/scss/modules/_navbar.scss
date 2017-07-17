@@ -1,0 +1,709 @@
+.navbar {
+  margin-bottom: 0;
+  transition: all 300ms ease;
+
+  &-nav {
+    &::before {
+      // border-top: 1px solid red;
+      box-sizing: border-box;
+      content: '';
+      margin-left: -1.5rem;
+      padding: 0;
+      position: fixed;
+      width: 100%;
+    }
+  }
+
+  &-fixed-top  {
+      transition: all 500ms ease;
+  }
+
+  &__logo-text {
+    color: $negro;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    @include xxs-device {
+      font-size: 1.8rem;
+    }
+
+    @include sm-device {
+      font-size: 3.2rem;
+    }
+  }
+
+  &-default {
+    background-color: rgba($blanco, 0);
+    border-color: rgba(#e2e2e2, 0);
+
+    .navbar-nav {
+      @include md-device {
+        float: right;
+      }
+
+      & > .open {
+        a {
+          background-color: transparent;
+
+          &:hover,
+          &:focus {
+            background-color: transparent;
+          }
+        }
+      }
+
+      & > {
+        li > {
+          a {
+            color: $blanco;
+            font-size: 1.4rem;
+            font-weight: 300;
+            transition: color 250ms;
+
+            &:hover {
+              color: $azul;
+              transition: color 250ms;
+            }
+          }
+        }
+
+        .active > {
+          a {
+            background: transparent;
+            color: $negro;
+
+            &:focus {
+              color: $azul;
+
+              @include xxs-device {
+                background: rgba($azul, .1);
+              }
+
+              @include sm-device {
+                background: transparent;
+              }
+            }
+
+            &:hover {
+              background: transparent;
+              color: $azul;
+            }
+
+          }
+        }
+      }
+
+    }
+
+    .navbar-brand {
+      background-position: center;
+      // border: 1px solid green;
+      color: $negro;
+      display: inline-flex;
+
+      @include xxs-device {
+        background-size: 80%;
+        max-height: 2rem;
+      }
+
+      @include md-device {
+        background-size: contain;
+      }
+
+      img {
+        align-self: center;
+
+        @include xxs-device {
+          max-height: 2rem;
+          opacity: 1;
+        }
+
+        @include md-device {
+          max-height: 2.7rem;
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        color: $negro;
+      }
+    }
+
+    .navbar-toggle {
+      border-color: transparent;
+      transition: all 300ms ease-out;
+
+      @include sm-device {
+        display: block;
+      }
+
+      @include md-device {
+        display: none;
+      }
+
+      &:focus,
+      &:hover {
+        background: transparent;
+      }
+
+      .icon-bar {
+        background-color: $blanco;
+      }
+    }
+  }
+
+  &-brand {
+    display: flex;
+    height: auto;
+    line-height: normal;
+    position: relative;
+
+    @include xxs-device {
+      padding: 1.4rem 0;
+      padding-left: 1.5rem;
+    }
+
+    @include md-device {
+      padding: 2rem 1.5rem;
+      padding-right: 1rem;
+
+    }
+
+    .color-logo {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &__site-location {
+    display: inline-block;
+    float: left;
+  }
+
+  &__logo-subtext {
+    color: $negro;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    letter-spacing: normal;
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+
+    @include xxs-device {
+      display: inline-block;
+      font-size: 1.4rem;
+      // border: 1px solid red;
+    }
+
+    @include md-device {
+       font-size: 1.6rem;
+       margin-left: 0;
+    }
+
+
+    &::before {
+      content: '|';
+      left: 0;
+      position: absolute;
+      top: -2px;
+    }
+  }
+
+  .dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    border-top: 1px solid #f2f2f2;
+    position: fixed;
+    top: 50px;
+  }
+
+  .navbar-collapse {
+    @include xxs-device {
+      border-top: 0;
+      margin: 0 auto !important;
+      padding: 0;
+      width: 100%;
+    }
+
+    .collapse {
+      display: none !important;
+    }
+  }
+
+
+  &-header {
+    @include xxs-device {
+      float: left;
+    }
+  }
+}
+
+.nav-pills {
+  & > li {
+    display: inline-block;
+    float: none;
+    text-transform: uppercase;
+
+
+    &.active {
+      a {
+        background-color: $azul;
+        transition: background 250ms;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $negro;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  li {
+    a {
+      padding-left: 0;
+      padding-right: 0;
+      transition: background-color 250ms;
+
+      @include xxs-device {
+        // border-bottom: 1px solid #e7e7e7;
+        margin: 0 1.5rem;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+
+
+    @include sm-device {
+      border-bottom: 0;
+    }
+  }
+}
+
+
+
+.open-animation {
+  height: 3.4rem;
+
+  .icon-bar {
+    transition: all 300ms ease-out;
+
+    &:nth-child(2) {
+      margin-bottom: -.6rem;
+    }
+
+    &:last-child {
+      margin-top: -2px;
+    }
+  }
+}
+
+//-- Navbar White --------------------------------------------------------------
+.bg-white {
+  background-color: rgba($blanco, 1);
+  border-bottom: 1px solid #e2e2e2;
+  color: $negro;
+
+  .navbar-brand {
+    // background: url('../images/tamed-logo-2017.svg') no-repeat center center;
+    transition: background 300ms ease;
+
+    @include xxs-device {
+      background-size: 85%;
+    }
+
+
+    img {
+      @include xxs-device {
+        opacity: 1;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    .icon-bar {
+      background-color: $azul;
+    }
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+
+    @include sm-device {
+      width: 100%;
+    }
+
+    @include md-device {
+      width: initial;
+    }
+
+    & > li {
+      border-bottom: 1px solid #e7e7e7;
+    }
+
+    li {
+      @include xxs-device {
+        margin: 0 auto;
+        width: 100%;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      @include md-device {
+        border-bottom: 0;
+        width: initial;
+      }
+
+      a {
+        color: $negro;
+
+        @include xxs-device {
+          margin: 0 auto;
+        }
+
+        @include sm-device {
+          font-size: 1.6rem;
+        }
+
+        @include md-device {
+          font-size: 1.4rem;
+          margin: 0 1.5rem;
+        }
+      }
+    }
+
+    .open {
+      .collapsed {
+        .open > a {
+          color: $azul;
+
+          @include xxs-device {
+            &::after {
+              border-bottom: 1px solid $azul;
+              border-right: 1px solid $azul;
+              content: '';
+              display: block;
+              height: 1rem;
+              position: absolute;
+              right: 1.5rem;
+              top: 2rem;
+              transform: rotate(225deg);
+              transition: all 300ms;
+              width: 1rem;
+            }
+          }
+
+          @include md-device {
+            &::after {
+              display: none;
+            }
+          }
+        }
+
+        > a {
+          &::after {
+            border-bottom: 1px solid $negro;
+            border-right: 1px solid $negro;
+            content: '';
+            display: block;
+            height: 1rem;
+            position: absolute;
+            right: 1.5rem;
+            top: 2rem;
+            transform: rotate(45deg);
+            transition: all 300ms;
+            width: 1rem;
+          }
+
+          @include md-device {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-no-gradient {
+
+  &::after {
+    background: transparent !important;
+  }
+}
+
+//-- Yamm Navbar ---------------------------------------------------------------
+.dropdown-menu--desktop {
+  @include xxs-device {
+    display: none;
+  }
+
+  @include md-device {
+    // display: initial;
+  }
+}
+
+.dropdown-menu--mobile {
+  margin: 0 auto;
+  width: calc(100% - 3rem);
+
+  @include md-device { display: none; }
+
+    .dropdown {
+      margin-left: 0;
+      position: relative;
+
+      a {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.2rem 0;
+        padding-left: 1.5rem;
+        text-decoration: none;
+
+        img {
+          display: inline-block;
+          max-width: 8rem;
+        }
+      }
+
+      ul {
+        li {
+          margin-left: 0;
+
+
+          a {
+            font-weight: 300;
+            padding: 0;
+
+            @include sm-device {
+              width: 100%;
+            }
+
+            span {
+              @include xxs-device {
+                font-size: 1.4rem;
+              }
+              @include sm-device {
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+
+      .menu-sub-toggle {
+        font-weight: 300;
+        padding-left: 0;
+        position: relative;
+
+        @include xxs-device {
+          font-size: 1.4rem;
+        }
+
+        @include sm-device {
+          font-size: 1.6rem;
+          width: 100%;
+        }
+
+        &::after {
+          border-bottom: 1px solid $negro;
+          border-right: 1px solid $negro;
+          content: '';
+          display: block;
+          height: 1rem;
+          position: absolute;
+          right: 1.5rem;
+          top: 2rem;
+          transform: rotate(45deg);
+          transition: all 300ms;
+          width: 1rem;
+        }
+
+        @include md-device {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+}
+
+.dropdown-submenu {
+  display: none;
+  position: relative;
+
+    .dropdown-menu {
+      left: 0;
+      margin-top: -1px;
+      top: 0;
+    }
+}
+
+.yamm-fullwidth {
+  margin-left: 0;
+
+  .yamm-content {
+
+    .nav-pills {
+      @include md-device {
+        border-bottom: 1px solid #f2f2f2;
+      }
+
+      & > li {
+        &.active {
+          a {
+            background: transparent;
+            color: $azul;
+
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+
+        a {
+          color: $negro;
+          transition: all 300ms ease;
+
+          @include md-device {
+            font-size: 2rem;
+            font-weight: 300;
+          }
+
+          &:hover {
+            background: transparent;
+            color: $azul;
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      .tab-pane {
+        .nav-product-tab-list {
+          text-align: center;
+
+          li {
+            // border: 1px solid $azul;
+            display: inline-block;
+            width: calc(20% - 3rem);
+
+            @include xxs-device {
+              text-align: left;
+            }
+
+            @include md-device {
+              text-align: center;
+            }
+
+            a {
+              color: $negro;
+              transition: all 300ms ease;
+
+              img {
+                transform: scale(.9);
+                transition: all 300ms ease;
+              }
+
+              &:hover {
+                color: $azul;
+                text-decoration: none;
+
+
+                img {
+                  transform: scale(1);
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown.yamm-fullwidth.open {
+  & > a {
+    @include xxs-device {
+      border-bottom: 0;
+      color: $azul !important;
+
+      &::after {
+        border-bottom: 1px solid $azul;
+        border-right: 1px solid $azul;
+        content: '';
+        display: block;
+        height: 1rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 2rem;
+        transform: rotate(225deg);
+        transition: all 300ms;
+        width: 1rem;
+      }
+    }
+
+    @include md-device {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.dropdown.yamm-fullwidth {
+  & > a {
+    @include xxs-device {
+      color: $negro;
+
+      &::after {
+        border-bottom: 1px solid $negro;
+        border-right: 1px solid $negro;
+        content: '';
+        display: block;
+        height: 1rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 2rem;
+        transform: rotate(45deg);
+        transition: all 300ms;
+        width: 1rem;
+      }
+    }
+
+    @include md-device {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.arrow-down {
+  @include xxs-device {
+    display: none;
+  }
+
+  @include md-device {
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    display: inline-block;
+    height: .8rem;
+    margin-bottom: .2rem;
+    transform: rotate(45deg);
+    width: .8rem;
+  }
+}

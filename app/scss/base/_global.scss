@@ -1,0 +1,169 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $azul;
+
+  &:focus,
+  &:hover {
+    color: $azul;
+  }
+}
+
+.divider {
+  border-top: 1px solid $grisclaro;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  @include xxs-device {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.link {
+    border-bottom: 1px solid transparent;
+    font-weight: 300;
+    text-decoration: none;
+    transition: border-bottom 250ms;
+
+    &:hover {
+        border-bottom: 1px solid $azul;
+        text-decoration: none;
+        transition: border-bottom 250ms;
+    }
+
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &--arrow {
+      &::after {
+          background-color: transparent;
+          border-right: 1px solid $azul;
+          border-top: 1px solid $azul;
+          content: '';
+          display: inline-block;
+          height: 8px;
+          transform: rotate(45deg) translate(1px, -2px);
+          width: 8px;
+      }
+    }
+}
+
+
+.profile-pic {
+  // border: 1px solid $;
+  border-radius: 50px;
+  float: left;
+  height: 5rem;
+  left: 3rem;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5rem;
+}
+
+.experto {
+  color: $azul;
+  left: 9rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+    .nombre {
+      font-size: 1.4rem;
+    }
+
+   .folio {
+     color: $negro;
+     font-size: 1.4rem;
+   }
+}
+
+.card {
+  background: $blanco;
+  box-shadow: 0 1px 2px rgba($negro, .3);
+  min-height: 8rem;
+  // margin-bottom: 1.5rem;
+}
+
+.btn-fibaro {
+  background-color: $azul;
+  border-color: $azul;
+  border-radius: .3rem;
+  color: $blanco;
+  transition: 300ms ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+    color: $azul;
+  }
+}
+
+.btn-max-width {
+  max-width: 32rem;
+}
+
+b {
+  font-weight: 700;
+}
+
+.material-icons {
+  color: $azul;
+}
+
+.lista {
+  font-size: 2rem;
+}
+
+.js-powered-by-eb-link.link--subtle.link--undecorated {
+  display: none !important;
+}
+
+.transparent-bg {
+  background-color: $negro;
+  border-bottom: transparent;
+  transition: 800ms ease;
+}
+
+.navbar-brand {
+  .desktop-logo {
+    @include xxs-device {
+      display: none;
+    }
+
+    @include md-device {
+      display: block;
+      margin-top: 0 !important;
+      max-height: 2.8rem;
+    }
+  }
+
+  .mobile-icon {
+    max-height: 2rem;
+
+    @include xxs-device {
+      display: block;
+    }
+    @include md-device {
+      display: none;
+    }
+  }
+}
+
+.text-color-white {
+  color: $blanco;
+}

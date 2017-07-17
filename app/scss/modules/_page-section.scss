@@ -1,0 +1,305 @@
+.page-section {
+    @include xxs-device {
+        padding: 4rem 0;
+    }
+
+    @include xs-device {
+      padding: 4rem 0;
+    }
+    @include sm-device {
+        padding: 4rem 0;
+    }
+    @include md-device {
+        padding: 10rem 0;
+    }
+
+    //----------
+    // Soluciones Basicas
+    //----------
+    &--soluciones {
+        .row {
+            &:nth-child(2) {
+                .col-sm-4 {
+                    &:first-child {
+                        .thumbnail {
+                            @include xxs-device {
+                                margin-top: 0;
+                            }
+                            @include md-device {
+                                margin-bottom: 6rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .col-sm-4 {
+                    &:first-child {
+                        .thumbnail {
+                            @include md-device {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        .thumbnail {
+                            // border: 1px dashed green;
+                            @include md-device {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        .thumbnail {
+                            @include xxs-device {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .thumbnail {
+            border: transparent;
+            @include xxs-device {
+                margin-bottom: 6rem;
+            }
+
+            img {
+              max-height: 5rem;
+            }
+
+            h3 {
+                @include xxs-device {
+                    font-size: 2.4rem;
+                }
+                @include md-device {
+                    font-size: 3.2rem;
+                }
+            }
+        }
+
+        &__link {
+            @include sm-device {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    //----------
+    // Software
+    //----------
+
+    &--software {
+        .col-sm-6 {
+            @include xxs-device {
+                margin-bottom: 4rem;
+            }
+
+            &:first-child {
+                @include xxs-device {
+                    margin-top: 3rem;
+                }
+                @include md-device {
+                    margin-bottom: 0;
+                }
+            }
+
+            &:last-child {
+                @include sm-device {
+                    margin-top: 3rem;
+                }
+                @include xxs-device {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__descarga--img {
+            @include xxs-device {
+              margin-bottom: 3rem;
+              max-height: 6rem;
+            }
+        }
+
+        &__descarga {
+            color: $azul;
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 300;
+            position: relative;
+            @include xxs-device {
+                padding-left: 3rem;
+            }
+            @include md-device {
+                padding-left: 3rem;
+            }
+
+            &::before {
+                background: url('../images/cloud-download-simple-line-icons@3x.png') no-repeat center center;
+                background-size: contain;
+                // border: 1px solid red;
+                content: '';
+                display: block;
+                height: 2rem;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 2rem;
+            }
+        }
+    }
+
+    //---------
+    // Ayuda
+    //---------
+
+    &--ayuda {
+      padding-bottom: 2rem;
+
+      .tiny {
+        font-size: 1.4rem;
+      }
+
+        &__img {
+          float: left;
+          height: 4rem;
+          margin-right: 1.5rem;
+          width: 4rem;
+        }
+
+        &__text-azul {
+            color: $azul;
+
+            @include md-device {
+              font-size: 1.8rem;
+            }
+        }
+
+        &__text-container {
+          @include xxs-device {
+            max-width: 16rem;
+          }
+
+          @include md-device {
+            max-width: initial;
+          }
+        }
+
+        &__text {
+            font-weight: 300;
+            margin-top: 0;
+
+            @include xxs-device {
+                font-size: 1.6rem;
+                margin-bottom: 0;
+                // padding-left: 1rem;
+            }
+            @include md-device {
+                font-size: 2.2rem;
+                // padding-left: initial;
+            }
+        }
+
+        &__align {
+          align-items: center;
+          display: inline-flex;
+          flex-wrap: wrap;
+          text-align: left;
+            @include xxs-device {
+              margin: 3rem 0;
+            }
+
+            @include sm-device {
+              margin-bottom: 4rem;
+              margin-top: 3rem;
+            }
+        }
+
+        &__link {
+            font-weight: 300;
+            @include xxs-device {
+                font-size: 1.6rem;
+                // padding-left: 1rem;
+            }
+            @include md-device {
+                font-size: 1.8rem;
+                margin-bottom: 6rem;
+                // padding-left: initial;
+            }
+        }
+    }
+
+    //---------
+    // Garantia
+    //---------
+    &--garantia {
+
+      &__img {
+        float: left;
+        height: 5rem;
+        margin-right: 1.5rem;
+        width: 5rem;
+      }
+
+      &__text-azul {
+          color: $azul;
+
+          @include xxs-device {
+            font-size: 1.6rem;
+          }
+          @include sm-device {
+            font-size: 1.4rem;
+          }
+      }
+
+      &__text {
+          font-weight: 300;
+          margin-top: 0;
+
+          @include xxs-device {
+              font-size: 1.8rem;
+              margin-bottom: 0;
+              // padding-left: 1rem;
+          }
+          @include md-device {
+              font-size: 2.2rem;
+              // padding-left: initial;
+          }
+      }
+
+      &__align {
+        align-items: center;
+        display: inline-flex;
+        flex-wrap: wrap;
+        text-align: left;
+
+          @include xxs-device {
+            margin: 3rem 0;
+          }
+
+          @include sm-device {
+            margin-bottom: 4rem;
+            margin-top: 3rem;
+          }
+      }
+
+      &__link {
+          font-weight: 300;
+          @include xxs-device {
+              font-size: 1.8rem;
+              // padding-left: 1rem;
+          }
+          @include md-device {
+              font-size: 2rem;
+              margin-bottom: 6rem;
+              // padding-left: initial;
+          }
+      }
+
+    }
+}

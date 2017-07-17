@@ -1,0 +1,25 @@
+.panel {
+  border: transparent;
+  box-shadow: none;
+
+  &-default {
+    & > .panel-heading {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &-title {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &-group {
+    margin-bottom: 0;
+  }
+
+  &-heading {
+    padding-left: .5rem;
+  }
+}
